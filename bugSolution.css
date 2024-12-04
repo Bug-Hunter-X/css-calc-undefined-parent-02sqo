@@ -1,0 +1,15 @@
+To solve the issue, ensure the parent element of the element using `calc(50% - 10px)` has its width explicitly defined. For example:
+
+```css
+.parent {
+  width: 800px;
+}
+
+.container {
+  width: calc(50% - 10px);
+}
+```
+
+Now, the `50%` in the `calc()` function will be correctly relative to the parent's width of `800px`.  The container will have a width of `(800px * 0.5) - 10px = 390px`.
+
+Alternatively, if the parent's width is inherited from its parent, ensure the ancestor element has its width properly defined.  In many cases simply adding `width: 100%;` to the parent container will resolve the issue.
