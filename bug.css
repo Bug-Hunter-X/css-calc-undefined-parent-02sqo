@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error related to the usage of `calc()` function and percentage values:
+
+```css
+.container {
+  width: calc(50% - 10px);
+}
+```
+
+This code intends to make the container's width 50% of its parent's width, minus 10 pixels. However, if the parent element doesn't have a defined width, the calculation might fail to produce the expected result. The `50%` within `calc()` is relative to the parent's width, which is undefined; thus the whole expression is indeterminate. 
+
+Another potential issue is the order of operations within a `calc()` expression.  If the expression is complex, it's crucial to ensure the operations are performed in the correct sequence.  Parentheses can help clarify this. This is less of a bug and more of a potential pitfall. 
